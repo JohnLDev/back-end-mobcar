@@ -19,7 +19,15 @@ export default {
   },
 
   async SignUp(request: Request, response: Response): Promise<Response> {
-    const { name, cpf, email, password, cellphone, birthdate } = request.body
+    const {
+      name,
+      cpf,
+      email,
+      password,
+      cellphone,
+      birthdate,
+      is_Adm,
+    } = request.body
 
     const createUserService = container.resolve(CreateUserService)
     const user = await createUserService.execute({
@@ -29,6 +37,7 @@ export default {
       password,
       cellphone,
       birthdate,
+      is_Adm,
     })
     return response.status(201).json(UserView.render(user))
   },
