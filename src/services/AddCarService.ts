@@ -46,9 +46,9 @@ export default class AddCarService {
     data.model = data.model.toLocaleLowerCase()
     data.category = data.category.toLocaleLowerCase() as typeof category
     if (
-      category !== 'padrao' &&
-      category !== 'executivo' &&
-      category !== 'vip'
+      data.category !== 'padrao' &&
+      data.category !== 'executivo' &&
+      data.category !== 'vip'
     ) {
       throw new AppError('Invalid category => (Padrao, Executivo, Vip)')
     }
