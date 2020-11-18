@@ -4,10 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "dev:server": "ts-node-dev --transpile-only --inspect --ignore-watch node_modules src/server.ts",
-    "typeorm": "ts-node-dev  ./node_modules/typeorm/cli.js",
-    "test": "jest"
+
+      "start": "node dist/server.js",
+      "dev": "tsnd --transpile-only --ignore-watch node_modules src/server.ts",
+      "build": "tsc",
+      "typeorm": "tsnd ./node_modules/typeorm/cli.js",
+      "test": "jest"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
